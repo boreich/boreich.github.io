@@ -24,6 +24,9 @@
         box-sizing: border-box;
 
     }
+    .days {
+        display: block;
+    }
     .applause {
         display: block;
         width: 100%;
@@ -31,21 +34,37 @@
     }
 </style>
 <div class="independence">
-    Михалыч независим уже <span id="days"></span>
+    Михалыч независим уже <span id="days" class="days"></span>
 </div>
 <img src="https://i.giphy.com/media/gsYKROakiJQPu/giphy.webp" class="applause">
 <script>
 
-    function plural(word, num) {
-      var forms = word.split('_');
-      return num % 10 === 1 && num % 100 !== 11 ? forms[0] : (num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20) ? forms[1] : forms[2]);
+    function plural(words, num) {
+      var forms = words.split('_');
+      const word = num % 10 === 1 && num % 100 !== 11 ? forms[0] : (num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20) ? forms[1] : forms[2]);
+      return `${num} ${word}`;
     }
 
     function independence() {
-      return Math.floor((new Date() - new Date(2015, 9, 22)) / 1000 / 3600 / 24);
+      const ms = new Date() - new Date(2015, 9, 22);
+      const seconds = ms / 1000;
+      const rmSeconds = Math.floor(seconds % 60);
+      const minutes = Math.floor(seconds / 60);
+      const rmMinutes = Math.floor(minutes % 60);
+      const hours = Math.floor(minutes / 60);
+      const rmHours = Math.floor(hours % 24);
+      const days = Math.floor(hours / 24);
+      return `${plural('день_дня_дней', days)} ${plural('час_часа_часов', rmHours)} ${plural('минуту_минуты_минут', rmMinutes)} ${plural('секунду_секунды_секунд', rmSeconds)}`;
     }
 
-    document.getElementById('days').innerHTML = `${independence()} ${plural('день_дня_дней', independence())}`;
+    function insertDays() {
+      document.getElementById('days').innerHTML = independence()
+    }
+
+    insertDays()
+    setInterval( function() {
+      insertDays()
+    }, 1000)
 </script>
 </body>
 </html>
