@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Михалыч покоряет Москву</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:700&amp;subset=cyrillic-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
 </head>
 <body>
 <style>
     body {
         margin: 0;
         background: black;
+        font-family: 'Roboto', sans-serif;
+        min-height: 100%;
+        font-size: 16px;
     }
     .independence {
         padding: 20px;
@@ -18,11 +21,9 @@
         text-transform: uppercase;
         color: white;
         text-align: center;
-        font-size: 40px;
-        font-family: 'Roboto', sans-serif;
+        font-size: 2.5rem;
         font-weight: 700;
         box-sizing: border-box;
-
     }
     .days {
         display: block;
@@ -32,9 +33,45 @@
         width: 100%;
         margin: auto;
     }
+    .supports {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: #ffffff;
+        padding: 2rem;
+        text-align: right;
+    }
+    .supports__title {
+        margin: 0;
+        padding: 0 0 0.5rem;
+        font-weight: 400;
+        font-size: 1.2rem;
+    }
+    .supports__list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    .supports__list li {
+        margin: 0;
+        padding: 0 0 .2rem;
+    }
+    .supports__list a {
+        color: white;
+        cursor: pointer;
+    }
 </style>
 <div class="independence">
     Михалыч независим уже <span id="days" class="days"></span>
+</div>
+<div class="supports">
+    <h1 class="supports__title">При поддержке</h1>
+    <ul class="supports__list">
+        <li><a href="https://t.me/panteleykin" target="_blank" rel="noreferrer nofollow noopener">t.me/epanteleykin</a></li>
+        <li><a href="https://t.me/vbolote" target="_blank" rel="noreferrer nofollow noopener">t.me/vbolote</a></li>
+        <li><a href="https://t.me/undergif" target="_blank" rel="noreferrer nofollow noopener">t.me/undergif</a></li>
+        <li><a href="https://t.me/quotich" target="_blank" rel="noreferrer nofollow noopener">t.me/quotich</a></li>
+    </ul>
 </div>
 <img src="https://i.giphy.com/media/gsYKROakiJQPu/giphy.webp" class="applause">
 <script>
