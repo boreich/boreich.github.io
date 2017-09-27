@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Михалыч покоряет Москву</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700&amp;subset=cyrillic-ext" rel="stylesheet">
+</head>
+<body>
+<style>
+    body {
+        margin: 0;
+        background: black;
+    }
+    .independence {
+        padding: 20px;
+        position: absolute;
+        width: 100%;
+        text-transform: uppercase;
+        color: white;
+        text-align: center;
+        font-size: 40px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+
+    }
+    .applause {
+        display: block;
+        width: 100%;
+        margin: auto;
+    }
+</style>
+<div class="independence">
+    Михалыч независим уже <span id="days"></span>
+</div>
+<img src="https://i.giphy.com/media/gsYKROakiJQPu/giphy.webp" class="applause">
+<script>
+
+    function plural(word, num) {
+      var forms = word.split('_');
+      return num % 10 === 1 && num % 100 !== 11 ? forms[0] : (num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20) ? forms[1] : forms[2]);
+    }
+
+    function independence() {
+      return Math.floor((new Date() - new Date(2015, 9, 22)) / 1000 / 3600 / 24);
+    }
+
+    document.getElementById('days').innerHTML = `${independence()} ${plural('день_дня_дней', independence())}`;
+</script>
+</body>
+</html>
