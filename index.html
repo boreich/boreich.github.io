@@ -12,7 +12,7 @@
         <button class="panel__add" type="button" @click.preven="add">+</button>
     </div>
     <div class="streams">
-        <div class="streams__item" v-for="(stream, index) in streams" :class="'streams__item--' + inRow">
+        <div class="streams__item" v-for="(stream, index) in streams" :class="'streams__item--' + itemClassMod(index)">
             <div class="stream" >
                 <iframe class="stream__frame" :src="stream.url" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
                 <button class="stream__remove" type="button" @click.prevent="remove(index)">x</button>
