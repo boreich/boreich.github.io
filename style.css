@@ -19,6 +19,13 @@ body {
 .streams__item {
     flex: 0 0 50%;
 }
+
+.streams__item--3 {
+    flex-basis: 100%;
+}
+.streams__item--2 {
+    flex-basis: 50%;
+}
 .streams__item--3 {
     flex-basis: 33.33%;
 }
