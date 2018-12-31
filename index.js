@@ -11,7 +11,7 @@ const app = new Vue({
         return 2;
       } else if (count<= 6) {
         return 3;
-      } else if (count <= 8) {
+      } else if (count <= 12) {
         return 4;
       } else {
         return 5;
