@@ -19,6 +19,15 @@ body {
 .streams__item {
     flex: 0 0 50%;
 }
+.streams__item--3 {
+    flex-basis: 33.33%;
+}
+.streams__item--4 {
+    flex-basis: 25%;
+}
+.streams__item--5 {
+    flex-basis: 20%;
+}
 .stream {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
