@@ -4,6 +4,20 @@ const app = new Vue({
     url: '',
     streams: [],
   },
+  computed: {
+    inRow() {
+      const count = this.streams.length;
+      if (count <= 4) {
+        return 2;
+      } else if (count<= 6) {
+        return 3;
+      } else if (count <= 8) {
+        return 4;
+      } else {
+        return 5;
+      }
+    }
+  },
   methods: {
     add() {
       if (!this.url) return;
